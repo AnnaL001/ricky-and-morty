@@ -29,6 +29,7 @@ export class CharacterService {
     this.sendRequest().subscribe(response => {
       this.characters = response.results.map((response: any) => {
         this.character.id = response.id,
+        this.character.image = response.image,
         this.character.name = response.name,
         this.character.status = response.status,
         this.character.species = response.species,
