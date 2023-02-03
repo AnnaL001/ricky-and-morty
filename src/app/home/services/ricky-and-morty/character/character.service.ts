@@ -12,6 +12,7 @@ import { Character } from 'src/app/home/model/character';
 export class CharacterService {
   characterUrl = "https://rickandmortyapi.com/api/character";
   characters!: Character[];
+  character!: Character;
 
   constructor(private _http: HttpClient) {}
 
@@ -27,12 +28,12 @@ export class CharacterService {
   handleResponse(){
     this.sendRequest().subscribe(response => {
       this.characters = response.results.map((response: any) => {
-        response.id,
-        response.name,
-        response.status,
-        response.species,
-        response.location.name,
-        response.episode[0]
+        this.character.id = response.id,
+        this.character.name = response.name,
+        this.character.status = response.status,
+        this.character.species = response.species,
+        this.character.location = response.location.name,
+        this.character.firstEpisode = response.episode[0]
       })
       console.log(this.characters)
     });
