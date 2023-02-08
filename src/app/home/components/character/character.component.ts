@@ -7,7 +7,7 @@ import { Character } from '../../model/character';
   styleUrls: ['./character.component.scss']
 })
 export class CharacterComponent implements OnInit {
-  @Input() character!: Character;
+  @Input() character!: any;
 
   constructor() { }
 

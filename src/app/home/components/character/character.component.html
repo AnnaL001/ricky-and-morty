@@ -1,8 +1,13 @@
-<mat-card>
-  <mat-card-content>
-    <p>{{character.name}}</p>
-    <p>{{character.location}}</p>
-    <p>{{character.species}}</p>
-    <p>{{character.status}}</p>
+<mat-card class="card">
+  <mat-card-content class="card-content">
+    <div *ngIf="character.image">
+      <img src="{{character.image}}" alt="{{character.name}}'s image">
+    </div>
+    <div>
+      <p>Name: {{character.name}}</p>
+      <p>Location: {{character.location.name}}</p>
+      <p>Species: {{character.species}}</p>
+      <p>Status: {{character.status}}</p>
+    </div>
   </mat-card-content>
 </mat-card>
